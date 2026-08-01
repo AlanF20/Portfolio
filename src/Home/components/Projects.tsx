@@ -1,3 +1,5 @@
+import { Terminal } from 'lucide-react'
+
 import { PROJECTS } from '../data/content'
 import { Section } from './Section'
 
@@ -11,10 +13,10 @@ export function Projects() {
             className="group flex flex-col rounded-2xl border border-edge/70 bg-panel/60 p-6 transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_12px_40px_rgba(34,211,238,0.08)]"
           >
             <div
-              className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-accent/30 bg-accent/10 font-mono text-sm font-bold text-accent"
+              className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-accent/30 bg-accent/10 text-accent"
               aria-hidden="true"
             >
-              {'>_'}
+              <Terminal className="h-5 w-5" />
             </div>
             <h3 className="text-base font-semibold text-slate-100 transition-colors group-hover:text-accent">
               {project.title}

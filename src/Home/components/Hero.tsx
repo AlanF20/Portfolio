@@ -1,3 +1,5 @@
+import { ArrowRight } from 'lucide-react'
+
 import { DataPipelineAnimation } from './DataPipelineAnimation'
 import { Introduction } from './Introduction'
 
@@ -14,10 +16,10 @@ export function Hero() {
         <Introduction />
         <div>
           <DataPipelineAnimation />
-          <p className="mt-10 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-slate-600">
-            extract <span className="text-accent/70">→</span> process
-            <span className="text-accent/70">→</span> store
-            <span className="text-accent/70">→</span> display
+          <p className="mt-10 flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-slate-600">
+            extract <ArrowRight className="h-3 w-3 text-accent/70" aria-hidden="true" /> process
+            <ArrowRight className="h-3 w-3 text-accent/70" aria-hidden="true" /> store
+            <ArrowRight className="h-3 w-3 text-accent/70" aria-hidden="true" /> display
           </p>
         </div>
       </div>

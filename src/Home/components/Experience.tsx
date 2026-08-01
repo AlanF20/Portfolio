@@ -1,3 +1,5 @@
+import { ChevronRight } from 'lucide-react'
+
 import { EXPERIENCE } from '../data/content'
 import { Section } from './Section'
 
@@ -20,9 +22,7 @@ export function Experience() {
             <ul className="mt-4 grid max-w-3xl gap-x-8 gap-y-2 sm:grid-cols-2">
               {job.highlights.map((highlight) => (
                 <li key={highlight} className="flex items-start gap-2 text-sm text-slate-300">
-                  <span className="mt-1.5 text-accent" aria-hidden="true">
-                    ▸
-                  </span>
+                  <ChevronRight className="mt-1 h-3.5 w-3.5 shrink-0 text-accent" aria-hidden="true" />
                   {highlight}
                 </li>
               ))}

@@ -1,3 +1,5 @@
+import { ArrowUp } from 'lucide-react'
+
 import type { AntennaTelemetry, PipelinePhase, TelemetryField } from '../data/antennas'
 import {
   formatDbm,
@@ -106,7 +108,7 @@ export function AntennaBrowser({ telemetry, phase, highlighted }: AntennaBrowser
                   <dd className="flex items-center gap-1.5 tabular-nums">
                     {isActive && (
                       <span className="inline-flex items-center gap-1 text-[9px] font-semibold uppercase tracking-wide text-accent">
-                        <span aria-hidden="true">▲</span>
+                        <ArrowUp className="h-2.5 w-2.5" aria-hidden="true" />
                         extracting
                       </span>
                     )}

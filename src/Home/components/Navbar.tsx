@@ -1,15 +1,16 @@
-import { useState } from 'react'
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const LINKS = [
-  { label: 'Sobre mí', href: '#about' },
-  { label: 'Experiencia', href: '#experience' },
-  { label: 'Habilidades', href: '#skills' },
-  { label: 'Proyectos', href: '#projects' },
-  { label: 'Contacto', href: '#contact' },
-]
+  { label: "Sobre mí", href: "#about" },
+  { label: "Experiencia", href: "#experience" },
+  { label: "Habilidades", href: "#skills" },
+  { label: "Proyectos", href: "#projects" },
+  { label: "Contacto", href: "#contact" },
+];
 
 export function Navbar() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-edge/70 bg-ink/80 backdrop-blur-md">
@@ -21,7 +22,7 @@ export function Navbar() {
           alan<span className="text-accent">.flores</span>
         </a>
 
-        <ul className="hidden items-center gap-7 md:flex">
+        <ul className="hidden w-full sm:flex items-center justify-end gap-7">
           {LINKS.map((link) => (
             <li key={link.href}>
               <a
@@ -43,24 +44,22 @@ export function Navbar() {
           </a>
           <button
             type="button"
-            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-300 transition-colors hover:bg-edge/40 md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-300 transition-colors hover:bg-edge/40 sm:hidden"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              {open ? (
-                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              ) : (
-                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              )}
-            </svg>
+            {open ? (
+              <X className="h-5 w-5" aria-hidden="true" />
+            ) : (
+              <Menu className="h-5 w-5" aria-hidden="true" />
+            )}
           </button>
         </div>
       </nav>
 
       {open && (
-        <div className="border-t border-edge/70 bg-panel md:hidden">
+        <div className="border-t border-edge/70 bg-panel sm:hidden">
           <ul className="mx-auto max-w-6xl space-y-1 px-5 py-3">
             {LINKS.map((link) => (
               <li key={link.href}>
@@ -77,5 +76,5 @@ export function Navbar() {
         </div>
       )}
     </header>
-  )
+  );
 }

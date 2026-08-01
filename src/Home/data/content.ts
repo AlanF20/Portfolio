@@ -85,7 +85,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     title: 'Telemetry Data Pipeline',
     description:
-      'Sistema de adquisición de telemetría: extrae datos de la interfaz web de antenas, los procesa y almacena, y los despliega en un dashboard propio. Simulado aquí con datos en vivo.',
+      'Así se ve el pipeline en acción (animación del hero): la interfaz web de la antena se escanea, cada campo de telemetría se extrae en tiempo real y viaja como paquete de datos hasta el dashboard, que se actualiza con los valores obtenidos.',
     tags: ['React', 'TypeScript', 'GSAP', 'ETL', 'Telemetría'],
   },
   {
