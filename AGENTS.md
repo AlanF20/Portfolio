@@ -6,6 +6,7 @@ Project rules and conventions for the portfolio. Follow these when writing, edit
 
 - Vite 8 + React 19 + TypeScript (strict)
 - React Compiler enabled (`babel-plugin-react-compiler`) — **do not manually memoize**
+- Tailwind CSS (v4) for styling — see the Styling section
 - GSAP for animations
 - Oxlint for linting
 - No test framework configured yet
@@ -33,6 +34,7 @@ src/
 ├── Home/                      # One folder per page/feature (PascalCase)
 │   ├── Home.tsx               # Entry component
 │   ├── utils.ts               # Page-specific helpers
+│   ├── data/                  # Page-specific data, models & mock data
 │   ├── hooks/                 # Page-specific hooks (useXxx.ts)
 │   └── components/            # Page-specific components (PascalCase.tsx)
 ├── lib/                       # Shared pure utilities, constants, config
@@ -114,5 +116,9 @@ React Compiler is enabled. **Do not use `useMemo`, `useCallback`, or `React.memo
 
 ## Styling
 
-- Follow existing CSS conventions in the repo (check sibling files before inventing new patterns).
-- Scope styles to components. Avoid global selectors that leak across pages; put page-level rules in the page folder.
+- **Use Tailwind CSS (v4) for all styling.** Style components with utility classes in the JSX. Tailwind is configured via the `@tailwindcss/vite` plugin; global tokens, fonts, and custom `@keyframes` live in `src/index.css` under the `@theme` block (e.g. `--color-accent`, `--animate-scan`).
+- Do not write component `.css` files or new global selectors when Tailwind utilities can express the style. Add custom keyframes/animations as `--animate-*` tokens in `src/index.css`, then use them as `animate-*` classes.
+- Refer to design tokens (`bg-panel`, `text-accent`, `border-edge`, `font-mono`) instead of hardcoded hex/rgb values.
+- Use GSAP for animations and ScrollTrigger for scroll-driven reveals. Prefer GSAP timelines (drive them from `useEffect` with a cleanup that kills the timeline) over raw `setTimeout` chains.
+- Dark telemetry theme is the default: `bg-ink` page background, `bg-panel` cards, `accent` cyan highlights, `mint` success states.
+- Keep component-scoped styling; avoid global selectors that leak across pages.
