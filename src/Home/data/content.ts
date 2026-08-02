@@ -47,31 +47,68 @@ export const EXPERIENCE: ExperienceItem[] = [
   },
 ]
 
+export interface Skill {
+  name: string
+  icon?: string
+}
+
 export interface SkillGroup {
   category: string
-  skills: string[]
+  skills: Skill[]
 }
 
 export const SKILLS: SkillGroup[] = [
   {
     category: 'Frontend',
-    skills: ['React', 'Next.js', 'Nuxt.js', 'TypeScript', 'Tailwind CSS', 'Shadcn UI', 'TanStack Query', 'GSAP'],
+    skills: [
+      { name: 'React', icon: 'react' },
+      { name: 'Next.js', icon: 'nextdotjs' },
+      { name: 'Nuxt.js', icon: 'nuxt' },
+      { name: 'TypeScript', icon: 'typescript' },
+      { name: 'Tailwind CSS', icon: 'tailwindcss' },
+      { name: 'Shadcn UI', icon: 'shadcnui' },
+      { name: 'TanStack Query', icon: 'reactquery' },
+      { name: 'GSAP', icon: 'gsap' },
+    ],
   },
   {
     category: 'Backend',
-    skills: ['Node.js', 'NestJS', 'Prisma ORM', 'PostgreSQL', 'Passport.js', 'BullMQ', 'Openpay'],
+    skills: [
+      { name: 'Node.js', icon: 'nodedotjs' },
+      { name: 'NestJS', icon: 'nestjs' },
+      { name: 'Prisma ORM', icon: 'prisma' },
+      { name: 'PostgreSQL', icon: 'postgresql' },
+      { name: 'Passport.js', icon: 'passport' },
+      { name: 'BullMQ' },
+      { name: 'Openpay' },
+    ],
   },
   {
     category: 'Cloud & DevOps',
-    skills: ['Docker', 'GitHub Actions', 'AWS EC2 · S3 · RDS', 'Linux (Ubuntu)', 'Nginx', 'PM2'],
+    skills: [
+      { name: 'Docker', icon: 'docker' },
+      { name: 'GitHub Actions', icon: 'githubactions' },
+      { name: 'AWS EC2 · S3 · RDS' },
+      { name: 'Linux (Ubuntu)', icon: 'ubuntu' },
+      { name: 'Nginx', icon: 'nginx' },
+      { name: 'PM2', icon: 'pm2' },
+    ],
   },
   {
     category: 'Herramientas & Monitoreo',
-    skills: ['Playwright', 'Git', 'Splunk', 'New Relic'],
+    skills: [
+      { name: 'Playwright' },
+      { name: 'Git', icon: 'git' },
+      { name: 'Splunk', icon: 'splunk' },
+      { name: 'New Relic', icon: 'newrelic' },
+    ],
   },
   {
     category: 'Inteligencia Artificial',
-    skills: ['Claude Code', 'Gemini Pro'],
+    skills: [
+      { name: 'Claude Code', icon: 'claudecode' },
+      { name: 'Gemini Pro', icon: 'googlegemini' },
+    ],
   },
 ]
 

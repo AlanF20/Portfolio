@@ -1,5 +1,6 @@
 import { SKILLS } from '../data/content'
 import { Section } from './Section'
+import { SkillIcon } from './SkillIcon'
 
 export function Skills() {
   return (
@@ -16,10 +17,11 @@ export function Skills() {
             <ul className="mt-4 flex flex-wrap gap-2">
               {group.skills.map((skill) => (
                 <li
-                  key={skill}
-                  className="rounded-lg border border-edge bg-panel-2 px-3 py-1.5 text-xs font-medium text-slate-300 transition-colors hover:border-accent/40 hover:text-accent"
+                  key={skill.name}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-edge bg-panel-2 px-3 py-1.5 text-xs font-medium text-slate-300 transition-colors hover:border-accent/40 hover:text-accent"
                 >
-                  {skill}
+                  {skill.icon && <SkillIcon icon={skill.icon} className="h-3.5 w-3.5 shrink-0" />}
+                  {skill.name}
                 </li>
               ))}
             </ul>
